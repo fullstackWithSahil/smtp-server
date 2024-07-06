@@ -1,4 +1,5 @@
 const SMTPServer = require("smtp-server").SMTPServer;
+const port = process.env.PORT || 4000;
 
 const server = new SMTPServer({
     onConnect(session, cb) {
@@ -24,4 +25,4 @@ const server = new SMTPServer({
     }
 });
 
-server.listen(25, () => console.log("server running..."));
+server.listen(port, () => console.log("server running..."));
